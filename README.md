@@ -1,13 +1,13 @@
 # FastSite Customer Website Showcase
 
-This repository showcases customer websites built by FastSite. The project uses Next.js to create a showcase where multiple customer websites are hosted under different subpaths of the main domain.
+This repository showcases customer websites built by FastSite. The project uses Next.js to create individual customer websites hosted under different subpaths of the main domain.
 
 ## Structure
 
 The repository is organized as follows:
 
 - Main domain: `https://fastsite-customer-websites.vercel.app/`
-  - Shows a directory of all customer websites
+  - Redirects to `https://fastsite.my`
 - Customer-specific websites:
   - KL Green Garden: `https://fastsite-customer-websites.vercel.app/kl-green-garden`
   - Beautiful Garden Landscape: `https://fastsite-customer-websites.vercel.app/beautiful-garden-landscape`
@@ -28,9 +28,12 @@ To add a new customer website to the showcase:
    touch app/\(customers\)/new-customer-name/page.tsx
    ```
 
-3. Add the new customer website to the list in `app/page.tsx`
-
-4. Deploy the changes to Vercel
+3. Make sure to include a back link to FastSite's main site:
+   ```jsx
+   <Link href="https://fastsite.my" className="text-blue-600 hover:underline">
+     ← Back to FastSite
+   </Link>
+   ```
 
 ## Development
 
@@ -41,7 +44,7 @@ pnpm install
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000/kl-green-garden](http://localhost:3000/kl-green-garden) with your browser to see the result.
 
 ## Deployment
 

@@ -175,8 +175,11 @@ export default function BeautifulGardenLandscapePage() {
 
         {/* Footer with back link */}
         <div className="bg-gray-100 py-4 text-center">
-          <Link href="/" className="text-blue-600 hover:underline">
-            ← Back to FastSite Customer Websites
+          <Link
+            href="https://fastsite.my"
+            className="text-blue-600 hover:underline"
+          >
+            ← Back to FastSite
           </Link>
         </div>
       </main>
