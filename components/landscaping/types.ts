@@ -58,3 +58,8 @@ export interface WhyChooseUsData {
   title: string;
   description: string;
 }
+
+export interface FAQItem {
+  question: string;
+  answer: string;
+}

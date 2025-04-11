@@ -4,6 +4,7 @@ import {
   Review,
   MenuItem,
   WhyChooseUsData,
+  FAQItem,
 } from "../types";
 import { Award, Clock, Leaf, Shield, ThumbsUp, Users } from "lucide-react";
 
@@ -194,3 +195,41 @@ export const whyChooseUs: WhyChooseUsData = {
     },
   ],
 };
+
+export const faqs: FAQItem[] = [
+  {
+    question: "How often should I water my plants?",
+    answer:
+      "Watering frequency depends on the plant type, season, and environmental conditions. Generally, most plants need water when the top inch of soil feels dry. Tropical plants typically need more frequent watering, while succulents and cacti require less. We provide specific care instructions for all our plants and offer garden maintenance services to ensure optimal watering schedules.",
+  },
+  {
+    question: "Do you offer maintenance services after landscape installation?",
+    answer:
+      "Yes, we offer comprehensive maintenance packages to keep your landscape looking its best. Our maintenance services include regular pruning, fertilizing, pest control, weeding, and seasonal clean-ups. We can set up weekly, bi-weekly, or monthly maintenance schedules depending on your needs.",
+  },
+  {
+    question: "How much does a landscape design cost?",
+    answer:
+      "Landscape design costs vary based on project size, complexity, and specific requirements. For residential properties, our designs typically start from RM1,500 for basic plans. We offer free initial consultations to understand your needs and provide a detailed quote before starting any work.",
+  },
+  {
+    question: "Can you work with my existing garden layout?",
+    answer:
+      "Absolutely! We specialize in both new installations and renovations of existing landscapes. Our designers will evaluate your current garden, identify elements to preserve, and suggest enhancements that align with your vision and budget. This approach often saves costs while refreshing your outdoor space.",
+  },
+  {
+    question: "What plants work best in Malaysian climate?",
+    answer:
+      "Malaysia's tropical climate is ideal for many beautiful plant species. We recommend tropical plants like Heliconia, Bird of Paradise, Frangipani, and various palms. For shaded areas, consider ferns, peace lilies, and philodendrons. We also offer a selection of drought-resistant plants for areas with less rainfall or maintenance.",
+  },
+  {
+    question: "How long does a landscaping project typically take?",
+    answer:
+      "Project timelines vary based on scope and complexity. Small garden makeovers might take 1-2 weeks, while comprehensive landscape installations can take 4-8 weeks. Factors affecting timeline include weather conditions, material availability, and project size. We provide detailed timelines during the consultation phase.",
+  },
+  {
+    question: "Do you offer plant rental for events?",
+    answer:
+      "Yes, we offer plant and décor rentals for events of all sizes, from intimate gatherings to large corporate functions. Our rental service includes delivery, arrangement, and pickup. We have a wide selection of decorative plants, pots, and arrangements to match your event theme.",
+  },
+];

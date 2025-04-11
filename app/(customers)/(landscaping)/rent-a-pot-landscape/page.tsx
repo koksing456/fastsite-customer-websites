@@ -12,12 +12,14 @@ import { BackToFastSite } from "@/components/landscaping/BackToFastSite";
 import WhyChooseUs from "@/components/landscaping/WhyChooseUs";
 import { WhatsAppButton } from "@/components/landscaping/WhatsAppButton";
 import BookConsultation from "@/components/landscaping/BookConsultation";
+import FAQ from "@/components/landscaping/FAQ";
 import {
   companyInfo,
   services,
   reviews,
   images,
   whyChooseUs,
+  faqs,
 } from "@/components/landscaping/config/rent-a-pot";
 
 export default function RentAPotLandscapePage() {
@@ -31,6 +33,7 @@ export default function RentAPotLandscapePage() {
         <Cafe />
         <Gallery />
         <BookConsultation services={services} />
+        <FAQ faqs={faqs} />
         <Reviews reviews={reviews} />
         <Contact />
         <Map />
