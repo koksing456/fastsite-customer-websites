@@ -11,6 +11,7 @@ import { Footer } from "@/components/landscaping/Footer";
 import { BackToFastSite } from "@/components/landscaping/BackToFastSite";
 import WhyChooseUs from "@/components/landscaping/WhyChooseUs";
 import { WhatsAppButton } from "@/components/landscaping/WhatsAppButton";
+import BookConsultation from "@/components/landscaping/BookConsultation";
 import {
   companyInfo,
   services,
@@ -29,6 +30,7 @@ export default function RentAPotLandscapePage() {
         <WhyChooseUs data={whyChooseUs} />
         <Cafe />
         <Gallery />
+        <BookConsultation services={services} />
         <Reviews reviews={reviews} />
         <Contact />
         <Map />
@@ -37,7 +39,7 @@ export default function RentAPotLandscapePage() {
       <Footer />
       <WhatsAppButton
         phoneNumber={companyInfo.phone}
-        message="Hi, I'm interested in your landscaping services!"
+        message="Hi, I'm interested in your landscaping services! 🌿"
       />
     </div>
   );
