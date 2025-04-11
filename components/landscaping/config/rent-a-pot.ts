@@ -1,4 +1,11 @@
-import { CompanyInfo, Service, Review, MenuItem } from "../types";
+import {
+  CompanyInfo,
+  Service,
+  Review,
+  MenuItem,
+  WhyChooseUsData,
+} from "../types";
+import { Award, Clock, Leaf, Shield, ThumbsUp, Users } from "lucide-react";
 
 export const companyInfo: CompanyInfo = {
   name: "Rent A Pot Landscape",
@@ -127,5 +134,63 @@ export const images = {
     "https://images.unsplash.com/photo-1632162644763-80b2c6c372bf?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "https://images.unsplash.com/photo-1724501286045-41be53df0073?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "https://images.unsplash.com/photo-1649037756233-55cf385e4df2?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  ],
+};
+
+export const whyChooseUs: WhyChooseUsData = {
+  title: "Why Choose Us",
+  description:
+    "With over a decade of experience in landscaping excellence, we bring your garden dreams to life",
+  features: [
+    {
+      icon: Clock,
+      title: "10+ Years Experience",
+      description:
+        "A decade of creating beautiful landscapes and happy customers across Malaysia.",
+    },
+    {
+      icon: Leaf,
+      title: "Eco-Friendly Practices",
+      description:
+        "We use sustainable methods and environmentally conscious materials in all our projects.",
+    },
+    {
+      icon: Users,
+      title: "Expert Team",
+      description:
+        "Our certified landscaping professionals bring creativity and expertise to every project.",
+    },
+    {
+      icon: Shield,
+      title: "Quality Guarantee",
+      description:
+        "We stand behind our work with comprehensive maintenance and support.",
+    },
+    {
+      icon: Award,
+      title: "Award-Winning Designs",
+      description:
+        "Recognized for innovative and beautiful landscape transformations.",
+    },
+    {
+      icon: ThumbsUp,
+      title: "Customer Satisfaction",
+      description:
+        "Hundreds of happy customers and positive reviews across Malaysia.",
+    },
+  ],
+  stats: [
+    {
+      value: "500+",
+      label: "Projects Completed",
+    },
+    {
+      value: "98%",
+      label: "Satisfaction Rate",
+    },
+    {
+      value: "10+",
+      label: "Years Experience",
+    },
   ],
 };

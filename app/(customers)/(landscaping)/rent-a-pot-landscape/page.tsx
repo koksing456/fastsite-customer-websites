@@ -9,11 +9,13 @@ import { Contact } from "@/components/landscaping/Contact";
 import { Map } from "@/components/landscaping/Map";
 import { Footer } from "@/components/landscaping/Footer";
 import { BackToFastSite } from "@/components/landscaping/BackToFastSite";
+import WhyChooseUs from "@/components/landscaping/WhyChooseUs";
 import {
   companyInfo,
   services,
   reviews,
   images,
+  whyChooseUs,
 } from "@/components/landscaping/config/rent-a-pot";
 
 export default function RentAPotLandscapePage() {
@@ -23,6 +25,7 @@ export default function RentAPotLandscapePage() {
       <main className="flex-1">
         <Hero company={companyInfo} heroImage={images.hero} />
         <Services services={services} />
+        <WhyChooseUs data={whyChooseUs} />
         <Cafe />
         <Gallery />
         <Reviews reviews={reviews} />
