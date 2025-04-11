@@ -1,13 +1,19 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { CompanyInfo } from "./types";
 
-export function Hero() {
+interface HeroProps {
+  company: CompanyInfo;
+  heroImage: string;
+}
+
+export function Hero({ company, heroImage }: HeroProps) {
   return (
     <section className="relative">
       <div className="absolute inset-0 z-0">
         <Image
-          src="https://images.unsplash.com/photo-1558904541-efa843a96f01?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80"
-          alt="Beautiful potted plants and landscape"
+          src={heroImage}
+          alt={`${company.name} hero image`}
           fill
           className="object-cover brightness-[0.85]"
           priority
@@ -18,11 +24,7 @@ export function Hero() {
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
             Plant Rentals & Landscape Solutions
           </h1>
-          <p className="text-lg md:text-xl">
-            Rent A Pot Landscape offers premium plant rentals, landscaping
-            services, and a cozy café with delicious refreshments in Taman Desa,
-            Kuala Lumpur.
-          </p>
+          <p className="text-lg md:text-xl">{company.description}</p>
           <div className="flex flex-col sm:flex-row gap-4 pt-4">
             <Button size="lg" className="bg-green-600 hover:bg-green-700">
               Our Services

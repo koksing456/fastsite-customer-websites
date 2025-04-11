@@ -1,32 +1,11 @@
+import { Review } from "./types";
 import { Star } from "lucide-react";
 
-const reviews = [
-  {
-    name: "Jagjit S",
-    role: "Local Guide",
-    time: "2 years ago",
-    rating: 5,
-    quote:
-      "Great place for all your landscape needs. They also have a very cosy cafe with tasty selections.",
-  },
-  {
-    name: "Ruviantie Roslan",
-    role: "Customer",
-    time: "2 years ago",
-    rating: 5,
-    quote:
-      "Positive. Responsiveness, Punctuality, Quality, Professionalism, Value.",
-  },
-  {
-    name: "Hazura Hassan",
-    role: "Local Guide",
-    time: "2 years ago",
-    rating: 5,
-    quote: "The food is all delicious.. tip top menu.. the best services",
-  },
-];
+interface ReviewsProps {
+  reviews: Review[];
+}
 
-export function Reviews() {
+export default function Reviews({ reviews }: ReviewsProps) {
   return (
     <section id="reviews" className="py-16 md:py-24">
       <div className="container">
@@ -56,7 +35,7 @@ export function Reviews() {
                     ))}
                   </div>
                   <span className="ml-2 text-sm text-gray-500">
-                    {review.time}
+                    {review.timestamp}
                   </span>
                 </div>
                 <blockquote className="flex-1 mb-4 italic text-muted-foreground">
