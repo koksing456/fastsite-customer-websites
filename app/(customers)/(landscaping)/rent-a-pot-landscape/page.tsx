@@ -29,12 +29,12 @@ export default function RentAPotLandscapePage() {
       <main className="flex-1">
         <Hero company={companyInfo} heroImage={images.hero} />
         <Services services={services} />
-        <WhyChooseUs data={whyChooseUs} />
-        <Cafe />
         <Gallery />
+        <WhyChooseUs data={whyChooseUs} />
+        <Reviews reviews={reviews} />
         <BookConsultation services={services} />
         <FAQ faqs={faqs} />
-        <Reviews reviews={reviews} />
+        <Cafe />
         <Contact />
         <Map />
         <BackToFastSite />
