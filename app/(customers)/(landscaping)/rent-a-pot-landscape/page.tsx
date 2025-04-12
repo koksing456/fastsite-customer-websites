@@ -34,9 +34,9 @@ export default function RentAPotLandscapePage() {
         <Reviews reviews={reviews} />
         <BookConsultation services={services} />
         <FAQ faqs={faqs} />
-        <Cafe />
         <Contact />
         <Map />
+        <Cafe />
         <BackToFastSite />
       </main>
       <Footer />
