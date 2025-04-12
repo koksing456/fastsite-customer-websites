@@ -2,7 +2,6 @@ import Link from "next/link";
 import { Header } from "@/components/landscaping/Header";
 import { Hero } from "@/components/landscaping/Hero";
 import Services from "@/components/landscaping/Services";
-import { Cafe } from "@/components/landscaping/Cafe";
 import { Gallery } from "@/components/landscaping/Gallery";
 import Reviews from "@/components/landscaping/Reviews";
 import { Contact } from "@/components/landscaping/Contact";
@@ -42,7 +41,6 @@ export default function RentAPotLandscapePage() {
         <FAQ faqs={faqs} />
         <Contact />
         <Map />
-        <Cafe />
         <BackToFastSite />
       </main>
       <Footer />
