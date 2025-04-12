@@ -13,6 +13,7 @@ import WhyChooseUs from "@/components/landscaping/WhyChooseUs";
 import { WhatsAppButton } from "@/components/landscaping/WhatsAppButton";
 import BookConsultation from "@/components/landscaping/BookConsultation";
 import FAQ from "@/components/landscaping/FAQ";
+import SocialProof from "@/components/landscaping/SocialProof";
 import {
   companyInfo,
   services,
@@ -20,6 +21,7 @@ import {
   images,
   whyChooseUs,
   faqs,
+  socialProof,
 } from "@/components/landscaping/config/rent-a-pot";
 
 export default function RentAPotLandscapePage() {
@@ -29,6 +31,10 @@ export default function RentAPotLandscapePage() {
       <main className="flex-1">
         <Hero company={companyInfo} heroImage={images.hero} />
         <Services services={services} />
+        <SocialProof
+          trustBadges={socialProof.trustBadges}
+          clients={socialProof.clients}
+        />
         <Gallery />
         <WhyChooseUs data={whyChooseUs} />
         <Reviews reviews={reviews} />

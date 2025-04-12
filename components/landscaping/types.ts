@@ -63,3 +63,21 @@ export interface FAQItem {
   question: string;
   answer: string;
 }
+
+export interface TrustBadge {
+  platform: string;
+  rating: number;
+  reviewCount: number;
+  logo: string;
+  color: string;
+}
+
+export interface Client {
+  name: string;
+  logo: string;
+}
+
+export interface SocialProofData {
+  trustBadges: TrustBadge[];
+  clients: Client[];
+}

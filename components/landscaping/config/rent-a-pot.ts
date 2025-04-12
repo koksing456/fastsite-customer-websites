@@ -5,6 +5,7 @@ import {
   MenuItem,
   WhyChooseUsData,
   FAQItem,
+  SocialProofData,
 } from "../types";
 import { Award, Clock, Leaf, Shield, ThumbsUp, Users } from "lucide-react";
 
@@ -233,3 +234,71 @@ export const faqs: FAQItem[] = [
       "Yes, we offer plant and décor rentals for events of all sizes, from intimate gatherings to large corporate functions. Our rental service includes delivery, arrangement, and pickup. We have a wide selection of decorative plants, pots, and arrangements to match your event theme.",
   },
 ];
+
+export const socialProof: SocialProofData = {
+  trustBadges: [
+    {
+      platform: "Google",
+      rating: 4.8,
+      reviewCount: 117,
+      logo: "https://cdn.pixabay.com/photo/2015/12/11/11/43/google-1088004_1280.png",
+      color: "#4285F4",
+    },
+    {
+      platform: "Facebook",
+      rating: 4.7,
+      reviewCount: 86,
+      logo: "https://cdn.pixabay.com/photo/2015/05/17/10/51/facebook-770688_1280.png",
+      color: "#1877F2",
+    },
+    {
+      platform: "TripAdvisor",
+      rating: 4.9,
+      reviewCount: 52,
+      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKVgOyUkQKg31OI0RJ4F1XXftk_1SnPaUOQQ&s",
+      color: "#00aa6c",
+    },
+  ],
+  clients: [
+    {
+      name: "Four Seasons Hotel",
+      logo: "https://cdn.freebiesupply.com/logos/large/2x/four-seasons-hotels-and-resorts-logo-png-transparent.png",
+    },
+    {
+      name: "Shangri-La",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/3/30/SLKL-Stacked-EN-RGB.png",
+    },
+    {
+      name: "The Ritz-Carlton",
+      logo: "https://cdn.freebiesupply.com/logos/large/2x/the-ritz-carlton-logo-png-transparent.png",
+    },
+    {
+      name: "Petronas",
+      logo: "https://cdn.freebiesupply.com/logos/large/2x/petronas-logo-png-transparent.png",
+    },
+    {
+      name: "Sunway",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/7/76/Sunway_logo.png",
+    },
+    {
+      name: "Pavilion KL",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Pavilion_KL_Logo.svg/2560px-Pavilion_KL_Logo.svg.png",
+    },
+    {
+      name: "KLCC",
+      logo: "https://images.seeklogo.com/logo-png/13/1/suria-klcc-logo-png_seeklogo-134177.png",
+    },
+    {
+      name: "Hilton",
+      logo: "https://cdn.worldvectorlogo.com/logos/hilton-international.svg",
+    },
+    {
+      name: "Bank Negara Malaysia",
+      logo: "https://mdec.my/static/images/mdcap/resource-bnm-logo.png",
+    },
+    {
+      name: "Maybank",
+      logo: "https://seekvectorlogo.com/wp-content/uploads/2020/04/maybank-vector-logo.png",
+    },
+  ],
+};
