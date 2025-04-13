@@ -4,6 +4,7 @@ import { Hero } from "@/components/landscaping/Hero";
 import Services from "@/components/landscaping/Services";
 import { Gallery } from "@/components/landscaping/Gallery";
 import Reviews from "@/components/landscaping/Reviews";
+import GoogleReviews from "@/components/landscaping/GoogleReviews";
 import { Contact } from "@/components/landscaping/Contact";
 import { Map } from "@/components/landscaping/Map";
 import { Footer } from "@/components/landscaping/Footer";
@@ -24,6 +25,10 @@ import {
 } from "@/components/landscaping/config/rent-a-pot";
 
 export default function RentAPotLandscapePage() {
+  // Get API key and Place ID from environment variables
+  const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || "";
+  const placeId = process.env.NEXT_PUBLIC_GOOGLE_PLACE_ID || "";
+
   return (
     <div className="flex flex-col min-h-screen">
       <Header company={companyInfo} />
@@ -36,7 +41,14 @@ export default function RentAPotLandscapePage() {
         />
         <Gallery />
         <WhyChooseUs data={whyChooseUs} />
-        <Reviews reviews={reviews} />
+
+        {/* Use either the static Reviews component or the GoogleReviews component */}
+        {apiKey && placeId ? (
+          <GoogleReviews apiKey={apiKey} placeId={placeId} />
+        ) : (
+          <Reviews reviews={reviews} />
+        )}
+
         <BookConsultation services={services} />
         <FAQ faqs={faqs} />
         <Contact />
