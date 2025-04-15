@@ -1,3 +1,5 @@
+import { LucideIcon } from "lucide-react";
+
 export interface CompanyInfo {
   name: string;
   description: string;
@@ -37,4 +39,45 @@ export interface Review {
 export interface MenuItem {
   category: string;
   items: string[];
+}
+
+export interface Feature {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+}
+
+export interface Stats {
+  label: string;
+  value: string;
+}
+
+export interface WhyChooseUsData {
+  features: Feature[];
+  stats: Stats[];
+  title: string;
+  description: string;
+}
+
+export interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+export interface TrustBadge {
+  platform: string;
+  rating: number;
+  reviewCount: number;
+  logo: string;
+  color: string;
+}
+
+export interface Client {
+  name: string;
+  logo: string;
+}
+
+export interface SocialProofData {
+  trustBadges: TrustBadge[];
+  clients: Client[];
 }
