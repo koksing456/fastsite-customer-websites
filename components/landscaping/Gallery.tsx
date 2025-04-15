@@ -24,6 +24,10 @@ interface PlantImage {
   category: string;
 }
 
+interface GalleryProps {
+  images?: string[];
+}
+
 const transformations: BeforeAfterImage[] = [
   {
     id: 1,
@@ -96,8 +100,17 @@ const plantGallery: PlantImage[] = [
   },
 ];
 
-export function Gallery() {
+export function Gallery({ images: customImages }: GalleryProps = {}) {
   const [activeIndex, setActiveIndex] = useState(0);
+
+  // Use custom images for plant gallery if provided
+  const galleryImages = customImages
+    ? customImages.map((src, index) => ({
+        src,
+        alt: `Landscape project ${index + 1}`,
+        category: "Landscaping",
+      }))
+    : plantGallery;
 
   const nextSlide = () => {
     setActiveIndex((current) =>
@@ -210,18 +223,19 @@ export function Gallery() {
         <div className="mt-24 pt-6 border-t border-gray-100">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-green-600 font-semibold tracking-wide uppercase text-sm">
-              Our Greenhouse
+              Our Projects
             </span>
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">
-              Indoor Plant Collection
+              {customImages ? "Featured Projects" : "Indoor Plant Collection"}
             </h2>
             <p className="text-muted-foreground text-lg">
-              Discover our premium selection of indoor plants for home and
-              office
+              {customImages
+                ? "Explore our recent landscaping projects and transformations"
+                : "Discover our premium selection of indoor plants for home and office"}
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {plantGallery.map((plant, index) => (
+            {galleryImages.map((plant, index) => (
               <div
                 key={index}
                 className="group relative overflow-hidden rounded-lg shadow-md"

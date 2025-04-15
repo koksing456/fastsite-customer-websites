@@ -1,7 +1,13 @@
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { CompanyInfo } from "./types";
 
-const contactInfo = [
+interface ContactProps {
+  company?: CompanyInfo;
+}
+
+// Default contact info when no company is provided
+const defaultContactInfo = [
   {
     icon: Phone,
     title: "Phone",
@@ -32,7 +38,7 @@ const contactInfo = [
   },
 ];
 
-const services = [
+const defaultServices = [
   "Plant Rentals",
   "Landscape Design",
   "Garden Maintenance",
@@ -41,18 +47,54 @@ const services = [
   "Café Visit",
 ];
 
-export function Contact() {
+export function Contact({ company }: ContactProps) {
+  // Generate contact info based on company data if provided
+  const contactInfo = company
+    ? [
+        {
+          icon: Phone,
+          title: "Phone",
+          details: [company.phone],
+        },
+        {
+          icon: Mail,
+          title: "Email",
+          details: [company.email],
+        },
+        {
+          icon: MapPin,
+          title: "Location",
+          details: [
+            company.address.street,
+            `${company.address.city}, ${company.address.postcode} ${company.address.state}`,
+            company.address.country,
+          ],
+        },
+        {
+          icon: Clock,
+          title: "Business Hours",
+          details: Object.entries(company.businessHours).map(
+            ([day, hours]) => `${day}: ${hours}`
+          ),
+        },
+      ]
+    : defaultContactInfo;
+
+  // Get services based on the company if available
+  const services = defaultServices;
+
   return (
     <section id="contact" className="py-16 md:py-24 bg-gray-50">
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div>
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-6">
-              Visit Us
+              Contact Us
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
-              We're located in the heart of Taman Desa, Kuala Lumpur. Come visit
-              our garden center and café!
+              {company
+                ? `Get in touch with us to discuss your landscaping needs or to request a free quote.`
+                : `We're located in the heart of Taman Desa, Kuala Lumpur. Come visit our garden center and café!`}
             </p>
             <div className="space-y-6">
               {contactInfo.map((info, index) => (
@@ -118,7 +160,7 @@ export function Contact() {
                   className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                 >
                   <option value="">Select a service</option>
-                  {services.map((service, index) => (
+                  {services.map((service: string, index: number) => (
                     <option
                       key={index}
                       value={service.toLowerCase().replace(" ", "-")}

@@ -3,7 +3,6 @@ import { Hero } from "@/components/landscaping/Hero";
 import Services from "@/components/landscaping/Services";
 import { Gallery } from "@/components/landscaping/Gallery";
 import Reviews from "@/components/landscaping/Reviews";
-import GoogleReviews from "@/components/landscaping/GoogleReviews";
 import { Contact } from "@/components/landscaping/Contact";
 import { Map } from "@/components/landscaping/Map";
 import { Footer } from "@/components/landscaping/Footer";
@@ -11,6 +10,7 @@ import { BackToFastSite } from "@/components/landscaping/BackToFastSite";
 import WhyChooseUs from "@/components/landscaping/WhyChooseUs";
 import { WhatsAppButton } from "@/components/landscaping/WhatsAppButton";
 import SocialProof from "@/components/landscaping/SocialProof";
+import FAQ from "@/components/landscaping/FAQ";
 import {
   companyInfo,
   services,
@@ -19,43 +19,34 @@ import {
   whyChooseUs,
   faqs,
   socialProof,
-} from "@/components/landscaping/config/rent-a-pot";
+} from "@/components/landscaping/config/sitman-landscape";
 
-export default function RentAPotLandscapePage() {
-  // Get API key and Place ID from environment variables
-  const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || "";
-  const placeId = process.env.NEXT_PUBLIC_GOOGLE_PLACE_ID || "";
-
+export default function SitmanLandscapePage() {
   return (
     <div className="flex flex-col min-h-screen">
       <Header company={companyInfo} />
       <main className="flex-1">
         <Hero company={companyInfo} heroImage={images.hero} />
         <Services services={services} />
-        <Gallery />
-        <WhyChooseUs data={whyChooseUs} />
         <SocialProof
           trustBadges={socialProof.trustBadges}
           clients={socialProof.clients}
         />
-        {/* Use either the static Reviews component or the GoogleReviews component */}
-        {apiKey && placeId ? (
-          <GoogleReviews apiKey={apiKey} placeId={placeId} />
-        ) : (
-          <Reviews reviews={reviews} />
-        )}
-
-        <Contact />
+        <Gallery images={images.gallery} />
+        <WhyChooseUs data={whyChooseUs} />
+        <Reviews reviews={reviews} />
+        <FAQ faqs={faqs} />
+        <Contact company={companyInfo} />
         <Map
-          latitude={3.106742}
-          longitude={101.677507}
+          latitude={3.208336}
+          longitude={101.7456855}
           address={`${companyInfo.address.street}, ${companyInfo.address.city}, ${companyInfo.address.postcode} ${companyInfo.address.state}, ${companyInfo.address.country}`}
         />
         <BackToFastSite />
       </main>
-      <Footer />
+      <Footer company={companyInfo} />
       <WhatsAppButton
-        phoneNumber={companyInfo.phone}
+        phoneNumber={companyInfo.phone.replace(/[^0-9]/g, "")}
         message="Hi, I'm interested in your landscaping services! 🌿"
       />
     </div>
