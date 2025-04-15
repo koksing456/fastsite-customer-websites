@@ -32,13 +32,12 @@ export default function RentAPotLandscapePage() {
       <main className="flex-1">
         <Hero company={companyInfo} heroImage={images.hero} />
         <Services services={services} />
+        <Gallery />
+        <WhyChooseUs data={whyChooseUs} />
         <SocialProof
           trustBadges={socialProof.trustBadges}
           clients={socialProof.clients}
         />
-        <Gallery />
-        <WhyChooseUs data={whyChooseUs} />
-
         {/* Use either the static Reviews component or the GoogleReviews component */}
         {apiKey && placeId ? (
           <GoogleReviews apiKey={apiKey} placeId={placeId} />
