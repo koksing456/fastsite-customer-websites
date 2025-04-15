@@ -28,14 +28,13 @@ export default function SitmanLandscapePage() {
       <main className="flex-1">
         <Hero company={companyInfo} heroImage={images.hero} />
         <Services services={services} />
+        <Gallery images={images.gallery} />
+        <WhyChooseUs data={whyChooseUs} />
         <SocialProof
           trustBadges={socialProof.trustBadges}
           clients={socialProof.clients}
         />
-        <Gallery images={images.gallery} />
-        <WhyChooseUs data={whyChooseUs} />
         <Reviews reviews={reviews} />
-        <FAQ faqs={faqs} />
         <Contact company={companyInfo} />
         <Map
           latitude={3.208336}
