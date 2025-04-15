@@ -8,8 +8,13 @@ import {
   Phone,
   Mail,
 } from "lucide-react";
+import { CompanyInfo } from "./types";
 
-const services = [
+interface FooterProps {
+  company?: CompanyInfo;
+}
+
+const defaultServices = [
   "Plant Rentals",
   "Landscape Design",
   "Garden Maintenance",
@@ -24,13 +29,13 @@ const quickLinks = [
   { name: "Contact", href: "#contact" },
 ];
 
-const socialLinks = [
+const defaultSocialLinks = [
   { name: "Facebook", icon: Facebook, href: "#" },
   { name: "Instagram", icon: Instagram, href: "#" },
   { name: "Twitter", icon: Twitter, href: "#" },
 ];
 
-const contactInfo = [
+const defaultContactInfo = [
   {
     icon: MapPin,
     text: "Lot 5704, Jalan Desa Utama, Taman Desa, 58100 Kuala Lumpur",
@@ -39,7 +44,46 @@ const contactInfo = [
   { icon: Mail, text: "info@rentapot.com" },
 ];
 
-export function Footer() {
+export function Footer({ company }: FooterProps) {
+  // Dynamically generate contact info if company is provided
+  const contactInfo = company
+    ? [
+        {
+          icon: MapPin,
+          text: `${company.address.street}, ${company.address.city}, ${company.address.postcode} ${company.address.state}`,
+        },
+        { icon: Phone, text: company.phone },
+        { icon: Mail, text: company.email },
+      ]
+    : defaultContactInfo;
+
+  // Generate social links based on company data if provided
+  const socialLinks = company?.socialMedia
+    ? [
+        {
+          name: "Facebook",
+          icon: Facebook,
+          href: company.socialMedia.facebook || "#",
+        },
+        {
+          name: "Instagram",
+          icon: Instagram,
+          href: company.socialMedia.instagram || "#",
+        },
+        ...(company.socialMedia.twitter
+          ? [
+              {
+                name: "Twitter",
+                icon: Twitter,
+                href: company.socialMedia.twitter,
+              },
+            ]
+          : []),
+      ]
+    : defaultSocialLinks;
+
+  const services = defaultServices;
+
   return (
     <footer className="bg-gray-900 text-gray-300">
       <div className="container py-12">
@@ -48,12 +92,12 @@ export function Footer() {
             <div className="flex items-center gap-2 mb-4">
               <Leaf className="h-6 w-6 text-green-500" />
               <span className="text-xl font-bold text-white">
-                Rent A Pot Landscape
+                {company?.name || "Rent A Pot Landscape"}
               </span>
             </div>
             <p className="mb-4">
-              Premium plant rentals, landscape design, and a cozy café - all in
-              one location.
+              {company?.description ||
+                "Premium plant rentals, landscape design, and a cozy café - all in one location."}
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((social, index) => (
@@ -114,8 +158,8 @@ export function Footer() {
         </div>
         <div className="border-t border-gray-800 mt-12 pt-8 text-center text-sm">
           <p>
-            &copy; {new Date().getFullYear()} Rent A Pot Landscape. All rights
-            reserved.
+            &copy; {new Date().getFullYear()}{" "}
+            {company?.name || "Rent A Pot Landscape"}. All rights reserved.
           </p>
         </div>
       </div>
