@@ -1,13 +1,9 @@
+import { CompanyInfo, Service, Review, MenuItem, SocialProofData } from "../types";
 import {
-  CompanyInfo,
-  Service,
-  Review,
-  MenuItem,
-  WhyChooseUsData,
-  FAQItem,
-  SocialProofData,
-} from "../types";
-import { Award, Clock, Leaf, Shield, ThumbsUp, Users } from "lucide-react";
+  whyChooseUs as sharedWhyChooseUs,
+  faqs as sharedFaqs,
+  socialProof as sharedSocialProof,
+} from "./shared";
 
 export const companyInfo: CompanyInfo = {
   name: "Rent A Pot Landscape",
@@ -79,6 +75,7 @@ export const services: Service[] = [
   },
 ];
 
+// Unique Rent-A-Pot reviews
 export const reviews: Review[] = [
   {
     name: "Jagjit S",
@@ -105,6 +102,7 @@ export const reviews: Review[] = [
   },
 ];
 
+// Unique Rent-A-Pot cafe menu items
 export const menuItems: MenuItem[] = [
   {
     category: "Drinks",
@@ -126,6 +124,7 @@ export const menuItems: MenuItem[] = [
   },
 ];
 
+// Unique Rent-A-Pot image gallery
 export const images = {
   hero: "https://images.unsplash.com/photo-1558904541-efa843a96f01?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80",
   cafe: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -139,47 +138,16 @@ export const images = {
   ],
 };
 
-export const whyChooseUs: WhyChooseUsData = {
-  title: "Why Choose Us",
+export const whyChooseUs = {
+  ...sharedWhyChooseUs,
   description:
     "With over a decade of experience in landscaping excellence, we bring your garden dreams to life",
   features: [
     {
-      icon: Clock,
+      ...sharedWhyChooseUs.features[0],
       title: "10+ Years Experience",
-      description:
-        "A decade of creating beautiful landscapes and happy customers across Malaysia.",
     },
-    {
-      icon: Leaf,
-      title: "Eco-Friendly Practices",
-      description:
-        "We use sustainable methods and environmentally conscious materials in all our projects.",
-    },
-    {
-      icon: Users,
-      title: "Expert Team",
-      description:
-        "Our certified landscaping professionals bring creativity and expertise to every project.",
-    },
-    {
-      icon: Shield,
-      title: "Quality Guarantee",
-      description:
-        "We stand behind our work with comprehensive maintenance and support.",
-    },
-    {
-      icon: Award,
-      title: "Award-Winning Designs",
-      description:
-        "Recognized for innovative and beautiful landscape transformations.",
-    },
-    {
-      icon: ThumbsUp,
-      title: "Customer Satisfaction",
-      description:
-        "Hundreds of happy customers and positive reviews across Malaysia.",
-    },
+    ...sharedWhyChooseUs.features.slice(1),
   ],
   stats: [
     {
@@ -197,37 +165,8 @@ export const whyChooseUs: WhyChooseUsData = {
   ],
 };
 
-export const faqs: FAQItem[] = [
-  {
-    question: "How often should I water my plants?",
-    answer:
-      "Watering frequency depends on the plant type, season, and environmental conditions. Generally, most plants need water when the top inch of soil feels dry. Tropical plants typically need more frequent watering, while succulents and cacti require less. We provide specific care instructions for all our plants and offer garden maintenance services to ensure optimal watering schedules.",
-  },
-  {
-    question: "Do you offer maintenance services after landscape installation?",
-    answer:
-      "Yes, we offer comprehensive maintenance packages to keep your landscape looking its best. Our maintenance services include regular pruning, fertilizing, pest control, weeding, and seasonal clean-ups. We can set up weekly, bi-weekly, or monthly maintenance schedules depending on your needs.",
-  },
-  {
-    question: "How much does a landscape design cost?",
-    answer:
-      "Landscape design costs vary based on project size, complexity, and specific requirements. For residential properties, our designs typically start from RM1,500 for basic plans. We offer free initial consultations to understand your needs and provide a detailed quote before starting any work.",
-  },
-  {
-    question: "Can you work with my existing garden layout?",
-    answer:
-      "Absolutely! We specialize in both new installations and renovations of existing landscapes. Our designers will evaluate your current garden, identify elements to preserve, and suggest enhancements that align with your vision and budget. This approach often saves costs while refreshing your outdoor space.",
-  },
-  {
-    question: "What plants work best in Malaysian climate?",
-    answer:
-      "Malaysia's tropical climate is ideal for many beautiful plant species. We recommend tropical plants like Heliconia, Bird of Paradise, Frangipani, and various palms. For shaded areas, consider ferns, peace lilies, and philodendrons. We also offer a selection of drought-resistant plants for areas with less rainfall or maintenance.",
-  },
-  {
-    question: "How long does a landscaping project typically take?",
-    answer:
-      "Project timelines vary based on scope and complexity. Small garden makeovers might take 1-2 weeks, while comprehensive landscape installations can take 4-8 weeks. Factors affecting timeline include weather conditions, material availability, and project size. We provide detailed timelines during the consultation phase.",
-  },
+export const faqs = [
+  ...sharedFaqs,
   {
     question: "Do you offer plant rental for events?",
     answer:
