@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Header } from "@/components/landscaping/Header";
 import { Hero } from "@/components/landscaping/Hero";
 import Services from "@/components/landscaping/Services";
@@ -11,8 +10,6 @@ import { Footer } from "@/components/landscaping/Footer";
 import { BackToFastSite } from "@/components/landscaping/BackToFastSite";
 import WhyChooseUs from "@/components/landscaping/WhyChooseUs";
 import { WhatsAppButton } from "@/components/landscaping/WhatsAppButton";
-import BookConsultation from "@/components/landscaping/BookConsultation";
-import FAQ from "@/components/landscaping/FAQ";
 import SocialProof from "@/components/landscaping/SocialProof";
 import {
   companyInfo,
@@ -49,8 +46,6 @@ export default function RentAPotLandscapePage() {
           <Reviews reviews={reviews} />
         )}
 
-        <BookConsultation services={services} />
-        <FAQ faqs={faqs} />
         <Contact />
         <Map />
         <BackToFastSite />

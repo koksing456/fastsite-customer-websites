@@ -29,36 +29,36 @@ const transformations: BeforeAfterImage[] = [
     id: 1,
     title: "Modern Garden Makeover",
     before: {
-      src: "https://images.unsplash.com/photo-1598902108854-10e335adac99?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      src: "/landscaping-before-1.png",
       alt: "Overgrown garden before renovation",
     },
     after: {
-      src: "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      src: "https://images.unsplash.com/photo-1640772699603-60e40df54c79?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       alt: "Beautiful modern garden after renovation",
     },
   },
   {
     id: 2,
-    title: "Zen Garden Transformation",
-    before: {
-      src: "https://images.unsplash.com/photo-1616281677557-a40d9d9ece5e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3",
-      alt: "Empty space before zen garden",
-    },
-    after: {
-      src: "https://images.unsplash.com/photo-1632162644763-80b2c6c372bf?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3",
-      alt: "Peaceful zen garden after transformation",
-    },
-  },
-  {
-    id: 3,
     title: "Landscape Design Project",
     before: {
-      src: "https://images.unsplash.com/photo-1724501286045-41be53df0073?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3",
+      src: "/landscaping-before-3.png",
       alt: "Basic landscape before redesign",
     },
     after: {
       src: "https://images.unsplash.com/photo-1649037756233-55cf385e4df2?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3",
       alt: "Stunning landscape after redesign",
+    },
+  },
+  {
+    id: 3,
+    title: "Zen Garden Transformation",
+    before: {
+      src: "/landscaping-before-2.png",
+      alt: "Empty space before zen garden",
+    },
+    after: {
+      src: "https://images.unsplash.com/photo-1632162644763-80b2c6c372bf?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3",
+      alt: "Peaceful zen garden after transformation",
     },
   },
 ];
